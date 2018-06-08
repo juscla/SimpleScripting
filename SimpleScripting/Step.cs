@@ -35,13 +35,22 @@
         /// <param name="tag">
         /// The tag of the method.
         /// </param>
-        public Step(ScriptingBase instance, MethodInfo method, List<object> parameters, string tag)
+        /// <param name="rawStep">
+        /// The raw Step.
+        /// </param>
+        public Step(ScriptingBase instance, MethodInfo method, List<object> parameters, string tag, string rawStep)
         {
             this.instance = instance;
             this.Method = method;
             this.Parameters = parameters.ToArray();
             this.Tag = tag;
+            this.RawStep = rawStep;
         }
+
+        /// <summary>
+        /// Gets the raw step.
+        /// </summary>
+        public string RawStep { get; }
 
         /// <summary>
         /// Gets the method.

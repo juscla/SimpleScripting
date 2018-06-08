@@ -446,7 +446,7 @@ namespace SimpleScripting
             // we have the same count so we can return the parameters. 
             if (parameters.Count == expectedParameters.Length)
             {
-                return new Step(this, method, parameters, tag);
+                return new Step(this, method, parameters, tag, step);
             }
 
             for (var index = 0; index < expectedParameters.Length; index++)
@@ -478,7 +478,7 @@ namespace SimpleScripting
                 }
             }
 
-            return new Step(this, method, parameters, tag);
+            return new Step(this, method, parameters, tag, step);
         }
 
         /// <summary>
@@ -587,7 +587,7 @@ namespace SimpleScripting
         /// The parameter Type.
         /// </param>
         /// <returns>
-        /// The Enum value
+        /// The Enumeration value
         /// </returns>
         private static object ConvertToTaggedEnum(string key, Type type)
         {
